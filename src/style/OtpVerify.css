@@ -1,5 +1,4 @@
 
-/* OtpVerify.css */
 .otp-verify-container {
   display: flex;
   justify-content: center;
@@ -156,7 +155,6 @@
   font-weight: 600;
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
   .otp-verify-card {
     padding: 30px 24px;

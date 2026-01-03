@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import OtpInput from "react-otp-input";
 import api from "../api";
-import { setToken } from "../utils/auth";
+import { setToken, setUserName } from "../utils/auth";
 import "../style/OtpVerify.css";
-import { useNavigate } from "react-router-dom";
 
 const OtpVerify = () => {
   const { state } = useLocation();
@@ -32,7 +31,6 @@ const OtpVerify = () => {
     return () => clearInterval(timer);
   }, [resendTimer, showResend]);
 
-  // Resend OTP functionality
   const resendOtp = async () => {
     if (isResending) return;
 
@@ -48,7 +46,6 @@ const OtpVerify = () => {
         })
       );
 
-      // Start 30-second timer
       setResendTimer(30);
       setShowResend(false);
       setIsResending(false);
@@ -68,7 +65,7 @@ const OtpVerify = () => {
 
     try {
       const res = await api.post(
-        "/login",
+        "/pwa/user/login",
         new URLSearchParams({
           phone,
           otp,
@@ -77,6 +74,7 @@ const OtpVerify = () => {
       );
       if (res?.data?.status_code === 200) {
         setToken(res.data.data.token);
+        setUserName(res.data.data.user_name)
         navigate("/products");
       }
     } catch {

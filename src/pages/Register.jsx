@@ -19,7 +19,7 @@ const Register = () => {
 
     try {
       await api.post(
-        "/register",
+        "/pwa/user/register",
         new URLSearchParams({
           phone,
           dial_code: dialCode,
@@ -33,7 +33,7 @@ const Register = () => {
   };
 
   const handlePhoneChange = (e) => {
-    const value = e.target.value.replace(/\D/g, ""); // Remove non-digit characters
+    const value = e.target.value.replace(/\D/g, ""); 
     if (value.length <= 10) {
       setPhone(value);
       setError("");

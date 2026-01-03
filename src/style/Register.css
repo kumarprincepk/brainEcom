@@ -1,8 +1,3 @@
-
-
-
-
-/* Register.css */
 .register-container {
   display: flex;
   justify-content: center;
@@ -153,7 +148,6 @@
   box-shadow: none;
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
   .register-card {
     padding: 30px 24px;
