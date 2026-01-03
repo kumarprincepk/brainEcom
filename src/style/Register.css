@@ -1,0 +1,170 @@
+
+
+
+
+/* Register.css */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.register-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.register-title {
+  color: #1a1a1a;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.register-subtitle {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.phone-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.country-code-selector {
+  position: relative;
+  flex-shrink: 0;
+  width: 140px;
+}
+
+.country-flag {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  z-index: 2;
+}
+
+.country-select {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px 0 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  background-color: white;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.country-select:focus {
+  outline: none;
+  border-color: #FF6D6A;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FF6D6A;
+  pointer-events: none;
+  font-size: 10px;
+}
+
+.phone-input-wrapper {
+  flex-grow: 1;
+}
+
+.phone-input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #DADADA;
+  font-size: 15px;
+  color: #000000;
+  transition: border-color 0.2s;
+}
+
+.phone-input::placeholder {
+  color: #878282;
+}
+
+.phone-input:focus {
+  outline: none;
+  border-color: #FF6D6A;
+  box-shadow: 0 0 0 2px rgba(9, 9, 9, 0.1);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 5px;
+  min-height: 20px;
+}
+
+.send-code-btn {
+  width: 100%;
+  height: 52px;
+  background: linear-gradient(135deg, #FF6D6A 0%, #FF6D6A 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.send-code-btn:hover {
+  background: linear-gradient(135deg, #FF6D6A 0%, #FF6D6A 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.send-code-btn:active {
+  transform: translateY(0);
+}
+
+.send-code-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 30px 24px;
+  }
+  
+  .phone-input-container {
+    flex-direction: column;
+  }
+  
+  .country-code-selector {
+    width: 100%;
+  }
+}
+
